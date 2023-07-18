@@ -5,7 +5,8 @@ const driver = new selenium.Builder()
     .forBrowser("chrome")
     .build();
 
-driver.get(process.env.URL);
+const URL = 'http://port-80-ppve8677ei.treehouse-app.com/';
+driver.get(URL);
 
 const locators = {
   inviteeForm: By.id("registrar"),
@@ -14,7 +15,7 @@ const locators = {
 
 function addInvitee(name) {
 driver.findElement(locators.inviteeNameField)
-  .sendKeys("Adam Solhi");
+  .sendKeys(name);
 driver.findElement(locators.inviteeForm).submit();
 }
 
