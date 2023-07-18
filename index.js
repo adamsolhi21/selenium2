@@ -10,7 +10,7 @@ driver.get(URL);
 
 const locators = {
   inviteeForm: By.id("registrar"),
-  inviteeNameField: By.name("name")
+  inviteeNameField: By.css("#registrar input[name='name']")
 };
 
 function addInvitee(name) {
@@ -21,3 +21,4 @@ driver.findElement(locators.inviteeForm).submit();
 
 addInvitee("Celeste Sangster");
 addInvitee("Adam Solhi");
+
