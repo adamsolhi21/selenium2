@@ -1,12 +1,14 @@
 const selenium = require("selenium-webdriver");
 const By = selenium.By;
 
+const HomePage = require('./home');
+
 const driver = new selenium.Builder()
     .forBrowser("chrome")
     .build();
 
-const URL = 'http://port-80-ppve8677ei.treehouse-app.com/';
-driver.get(URL);
+    const homePage = new HomePage(driver);
+    homePage.open();
 
 const invitees = [
   'Gonzalo Torres del Fierro',
